@@ -5,12 +5,12 @@ import customtkinter
 app = CTk()
 app.title("Chatbot Samsung")
 app.geometry("800x600")
-customtkinter.set_appearance_mode("light")
+customtkinter.set_appearance_mode("light", color="#090ffd")
 
 texto = customtkinter.CTkLabel(master=app, text="Tire suas dúvidas", font=('Franklin Gothic Demi Cond', 25,), text_color=('#0100a2'))
 texto.pack(padx=10, pady=40)
 #007aff
-pergunta = CTkTextbox(master=app, scrollbar_button_hover_color='#010005', scrollbar_button_color="#010005", corner_radius=20, border_color="#010005", border_width=3)
+pergunta = CTkTextbox(master=app, scrollbar_button_hover_color='#090f11', scrollbar_button_color="#090f11", corner_radius=20, border_color="#090f11", border_width=2)
 pergunta.pack(padx=10, pady=5,)
 #522fdf
 #a4e0cd
@@ -23,7 +23,7 @@ botao = customtkinter.CTkButton(master=app, text="Enviar", command=clique,corner
 botao.pack(padx=10, pady=10)
 
 
-resposta = CTkTextbox(master=app, scrollbar_button_hover_color='#010005', scrollbar_button_color="#010005", corner_radius=20, border_color="#010005", border_width=3)
+resposta = CTkTextbox(master=app, scrollbar_button_hover_color='#090f11', scrollbar_button_color="#090f11", corner_radius=20, border_color="#090f11", border_width=2)
 resposta.pack(padx=10, pady=5,)
 
 
