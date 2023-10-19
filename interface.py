@@ -5,7 +5,7 @@ import customtkinter
 app = CTk()
 app.title("Chatbot Samsung")
 app.geometry("800x600")
-customtkinter.set_appearance_mode("light", color="#090ffd")
+customtkinter.set_appearance_mode("light")
 
 texto = customtkinter.CTkLabel(master=app, text="Tire suas dúvidas", font=('Franklin Gothic Demi Cond', 25,), text_color=('#0100a2'))
 texto.pack(padx=10, pady=40)
