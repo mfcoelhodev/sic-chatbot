@@ -9,9 +9,9 @@ import cProfile, random
 
 root = ct.CTk()
 root.title("Assistente Virtual")
-ct.set_appearance_mode("dark")
+ct.set_appearance_mode("light") #dark
 ct.set_default_color_theme("green")
-bgColor = "black"
+bgColor = "#f6f2f3"   #black
 root.configure(fg_color=bgColor)
 root.geometry("1000x650+500+100")
 
@@ -35,7 +35,7 @@ class ChatApp:
         self.root.resizable(True, True)
         self.root.geometry("520x620+500+100")
 
-        self.optionFram = Frame(root, bg="black")
+        self.optionFram = Frame(root, bg="#f6f2f3") #black
         # All imagas for chatfram code
 
         manIconSrc2 = Image.open("imagens\\samsung_avatar-removebg-preview.png")
@@ -56,14 +56,14 @@ class ChatApp:
                                 corner_radius=20)
         self.manIcon2.pack(side=LEFT, anchor="ne")
 
-        self.username = ct.CTkLabel(self.optionFram, text="Fale com a SAM", font=("consolas", 20), text_color="#d8d8df")
+        self.username = ct.CTkLabel(self.optionFram, text="Fale com a SAM", font=("consolas", 20), text_color="#010100") #d8d8df
         self.username.pack(side=LEFT, padx=5, pady=7, anchor="ne")
         self.optionFram.pack(side=TOP, fill=X, anchor="n")
 
-        self.canvas = tk.Canvas(root, bg="black", highlightthickness=0)
+        self.canvas = tk.Canvas(root, bg="#f6f2f3", highlightthickness=0) #black
 
-        self.label_frame = tk.Frame(self.canvas, bg="black")
-        self.label_frame.pack(side="left", fill="both", expand=True)
+        self.label_frame = tk.Frame(self.canvas, bg="#f6f2f3") #black
+        self.label_frame.pack(side="left", fill="both", expand=True) 
 
         self.scrollable_window = self.canvas.create_window((0, 0), window=self.label_frame, anchor="nw")
 
@@ -80,7 +80,7 @@ class ChatApp:
         self.canvas.bind("<Configure>", self.resize_frame)
         self.canvas.pack(side=TOP, fill=BOTH)
 
-        bgColorChatFram = "#080420"
+        bgColorChatFram = "#150767" #080420
         self.chatFram = Frame(root, bg=bgColorChatFram)
 
         self.chatIcon = ct.CTkButton(self.chatFram, text="",image=chatIconImage, width=20, bg_color=bgColorChatFram, fg_color=bgColorChatFram)
