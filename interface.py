@@ -5,6 +5,8 @@ from PIL import Image, ImageTk
 import time
 import os
 import cProfile, random
+from chatbot import Samsung_Chatbot
+
 #from generate import conversa_com_chatbot
 
 root = ct.CTk()
@@ -24,8 +26,8 @@ else:
         pass
 
 with open(file_path, "w") as img_src:
-    image_list = ["imagens\\avator.png", "imagens\\avator1.png", "imagens\\avator2.png"]
-    my_image = random.choice(image_list)
+    image_list = 'Imagens/avator.png'
+    my_image = image_list
     print(my_image)
     img_src.write(f"{my_image}")
 
@@ -38,13 +40,13 @@ class ChatApp:
         self.optionFram = Frame(root, bg="#f6f2f3") #black
         # All imagas for chatfram code
 
-        manIconSrc2 = Image.open("imagens\\samsung_avatar-removebg-preview.png")
+        manIconSrc2 = Image.open("Imagens\\samsung_avatar-removebg-preview.png")
         manIconImage2 = ImageTk.PhotoImage(manIconSrc2.resize((40, 40)))
-        submitIconSrc = Image.open("imagens\\send2.png")
+        submitIconSrc = Image.open("Imagens\\send2.png")
         submitIconImage = ImageTk.PhotoImage(submitIconSrc.resize((40, 40)))
-        messageIconSrc = Image.open("imagens\\message.png")
+        messageIconSrc = Image.open("Imagens\\message.png")
         messageIconImage = ImageTk.PhotoImage(messageIconSrc.resize((40, 40)))
-        chatIconSrc = Image.open("imagens\\download_logo_samsung-removebg-preview.png")
+        chatIconSrc = Image.open("Imagens\\download_logo_samsung-removebg-preview.png")
         chatIconImage = ImageTk.PhotoImage(chatIconSrc.resize((35, 35)))
 
         # All imagas for chatfram code ends here
@@ -106,7 +108,7 @@ class ChatApp:
         self.msgInput.delete(0, END)
         user_image_src = Image.open(self.imagename)
         user_image = ImageTk.PhotoImage(user_image_src.resize((40, 40)))        
-        bot_image_src = Image.open("imagens\\robot.png")
+        bot_image_src = Image.open("Imagens\\robot.png")
         bot_image = ImageTk.PhotoImage(bot_image_src.resize((40, 40)))
         if self.message != "":
             self.current_time = time.strftime("%H:%M")
@@ -124,7 +126,8 @@ class ChatApp:
             self.canvas.update_idletasks()
             self.canvas.yview_moveto(1.0)
             try:
-                #self.to_respond = conversa_com_chatbot(self.message)
+                ## teste com função chatbot
+                self.to_respond = Samsung_Chatbot(self.message)
                 if self.to_respond:
                     self.current_time = time.strftime("%H:%M")
                     self.current_time_label = ct.CTkLabel(self.label_frame, text=self.current_time, font=("consolas", 12))

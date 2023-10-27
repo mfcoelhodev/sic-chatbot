@@ -9,7 +9,7 @@ import magic
 import os
 import nltk
 import constants
-import gradio
+
 
 #cadastro da chave api presente no arquivo constants.py
 os.environ["OPENAI_API_KEY"] = constants.APIKEY
@@ -49,9 +49,5 @@ def Samsung_Chatbot(pergunta):
     resp = result['result']
     #retornando resposta do chatgpt
     return resp
-
-demo = gradio.Interface(fn = Samsung_Chatbot, inputs = "text", outputs = "text", title = "Samsung Chatbot")
-
-demo.launch(share=True)
 
     
