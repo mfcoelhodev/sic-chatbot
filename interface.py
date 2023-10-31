@@ -24,8 +24,8 @@ else:
         pass
 
 with open(file_path, "w") as img_src:
-    image_list = ["imagens\\avator.png", "imagens\\avator1.png", "imagens\\avator2.png"]
-    my_image = random.choice(image_list)
+    image_list ='imagens\\avator.png'
+    my_image = image_list
     print(my_image)
     img_src.write(f"{my_image}")
 
@@ -40,12 +40,12 @@ class ChatApp:
 
         manIconSrc2 = Image.open("imagens\\samsung_avatar-removebg-preview.png")
         manIconImage2 = ImageTk.PhotoImage(manIconSrc2.resize((40, 40)))
-        submitIconSrc = Image.open("imagens\\send2.png")
+        submitIconSrc = Image.open("imagens\\enviar.png")
         submitIconImage = ImageTk.PhotoImage(submitIconSrc.resize((40, 40)))
         messageIconSrc = Image.open("imagens\\message.png")
         messageIconImage = ImageTk.PhotoImage(messageIconSrc.resize((40, 40)))
-        chatIconSrc = Image.open("imagens\\download_logo_samsung-removebg-preview.png")
-        chatIconImage = ImageTk.PhotoImage(chatIconSrc.resize((35, 35)))
+        chatIconSrc = Image.open("imagens\\samsung.png")
+        chatIconImage = ImageTk.PhotoImage(chatIconSrc.resize((50, 60)))
 
         # All imagas for chatfram code ends here
 
@@ -80,7 +80,7 @@ class ChatApp:
         self.canvas.bind("<Configure>", self.resize_frame)
         self.canvas.pack(side=TOP, fill=BOTH)
 
-        bgColorChatFram = "#150767" #080420
+        bgColorChatFram = "#7eabde" #080420
         self.chatFram = Frame(root, bg=bgColorChatFram)
 
         self.chatIcon = ct.CTkButton(self.chatFram, text="",image=chatIconImage, width=20, bg_color=bgColorChatFram, fg_color=bgColorChatFram)
@@ -113,12 +113,12 @@ class ChatApp:
             self.current_time_label = ct.CTkLabel(self.label_frame, text=self.current_time, font=("consolas", 12))
             self.current_time_label.pack(side=TOP, anchor="ne", pady=0, padx=45)
 
-            self.user_frame = ct.CTkFrame(self.label_frame, fg_color="black")
+            self.user_frame = ct.CTkFrame(self.label_frame, fg_color="#f6f2f3") # borda do pergunta
             self.user_frame.pack(side=TOP, anchor="ne")
-            self.user_label = ct.CTkLabel(self.user_frame, text=self.message, font=("Poppins", 15), fg_color="#419f5b", corner_radius=4,wraplength=250)
+            self.user_label = ct.CTkLabel(self.user_frame, text=self.message, font=("Poppins", 15), fg_color="#95bbc9", corner_radius=4,wraplength=250) #419f5b
                                     
             self.user_label.pack(side=LEFT, anchor="nw", pady=1, ipadx=15, ipady=6, padx=10)
-            self.user_image_label = ct.CTkLabel(self.user_frame, text="", image=user_image, fg_color="black")
+            self.user_image_label = ct.CTkLabel(self.user_frame, text="", image=user_image, fg_color="#f6f2f3") #borda pergunta do icone 
             self.user_image_label.pack(side=TOP, pady=13)
             self.root.update_idletasks()
             self.canvas.update_idletasks()
@@ -129,11 +129,11 @@ class ChatApp:
                     self.current_time = time.strftime("%H:%M")
                     self.current_time_label = ct.CTkLabel(self.label_frame, text=self.current_time, font=("consolas", 12))
                     self.current_time_label.pack(side=TOP, anchor="nw", pady=0, padx=55)
-                    self.bot_frame = ct.CTkFrame(self.label_frame, fg_color="black")
+                    self.bot_frame = ct.CTkFrame(self.label_frame, fg_color="#f6f2f3")#black
                     self.bot_frame.pack(side=TOP, anchor="nw", padx=10)
                     self.bot_response_label = ct.CTkLabel(self.bot_frame, text=self.to_respond, font=("Poppins", 14), fg_color="#444", corner_radius=6, wraplength=300)                
                     self.bot_response_label.pack(side=RIGHT, anchor="ne", padx=10, pady=1, ipady=8, ipadx=10)
-                    self.bot_image_label = ct.CTkLabel(self.bot_frame, text="", image=bot_image, fg_color="black")
+                    self.bot_image_label = ct.CTkLabel(self.bot_frame, text="", image=bot_image, fg_color="#f6f2f3")#black
                     self.bot_image_label.pack(side=TOP, pady=13)
                     self.canvas.update_idletasks()
                     self.canvas.yview_moveto(1.0)
