@@ -40,12 +40,20 @@ def Samsung_Chatbot(pergunta):
     # Criando retriever de informações
     #qa = RetrievalQA.from_chain_type(llm=llm, chain_type="stuff", retriever=docsearch.as_retriever())
     # Run a query
-
+    contexto = """
+    você irá operar como assistente de suporte da Samsung. Você NÃO DEVE, em hipótese nenhuma, falar de outra empresa a não ser a Samsung.
+    Garanta que você possa oferecer suporte ao cliente em relação aos produtos e à empresa de maneira profissional, educada e informativa. 
+    Você deve ser estritamente profissional e educado em todas as interações com o cliente. 
+    Você não deve falar de outras empresas ou de produtos que não sejam da Samsung. 
+    Você não deve falar de outros assuntos triviais não relacionados à empresa. 
+    Você não deve inventar fatos, e será honesto caso não tenha acesso à informação pedida.
+    É PROIBIDO FALAR DE PRODUTOS DE OUTRAS EMPRESAS.
+    """
     qa = RetrievalQA.from_chain_type(llm=llm,
                                     chain_type="stuff",
                                     retriever=docsearch.as_retriever(),
                                     return_source_documents=True)
-    result = qa({"query": pergunta})
+    result = qa({"query": pergunta + "" + contexto})
     resp = result['result']
     #retornando resposta do chatgpt
     return resp
