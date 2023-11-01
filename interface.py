@@ -131,7 +131,7 @@ class ChatApp:
                     self.current_time_label.pack(side=TOP, anchor="nw", pady=0, padx=55)
                     self.bot_frame = ct.CTkFrame(self.label_frame, fg_color="#f6f2f3")#black
                     self.bot_frame.pack(side=TOP, anchor="nw", padx=10)
-                    self.bot_response_label = ct.CTkLabel(self.bot_frame, text=self.to_respond, font=("Poppins", 14), fg_color="#444", corner_radius=6, wraplength=300)                
+                    self.bot_response_label = ct.CTkLabel(self.bot_frame, text=self.to_respond, font=("Poppins", 14), fg_color="#4fe34f", corner_radius=6, wraplength=300)                
                     self.bot_response_label.pack(side=RIGHT, anchor="ne", padx=10, pady=1, ipady=8, ipadx=10)
                     self.bot_image_label = ct.CTkLabel(self.bot_frame, text="", image=bot_image, fg_color="#f6f2f3")#black
                     self.bot_image_label.pack(side=TOP, pady=13)
