@@ -1,2 +1,0 @@
-#Gerar o codigo
-
