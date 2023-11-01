@@ -5,7 +5,7 @@ from PIL import Image, ImageTk
 import time
 import os
 import cProfile, random
-#from generate import conversa_com_chatbot
+from chatbot import Samsung_Chatbot
 
 root = ct.CTk()
 root.title("Assistente Virtual")
@@ -124,7 +124,7 @@ class ChatApp:
             self.canvas.update_idletasks()
             self.canvas.yview_moveto(1.0)
             try:
-                #self.to_respond = conversa_com_chatbot(self.message)
+                self.to_respond = Samsung_Chatbot(self.message)
                 if self.to_respond:
                     self.current_time = time.strftime("%H:%M")
                     self.current_time_label = ct.CTkLabel(self.label_frame, text=self.current_time, font=("consolas", 12))
