@@ -106,7 +106,7 @@ class ChatApp:
         self.msgInput.delete(0, END)
         user_image_src = Image.open(self.imagename)
         user_image = ImageTk.PhotoImage(user_image_src.resize((40, 40)))        
-        bot_image_src = Image.open("imagens\\robot.png")
+        bot_image_src = Image.open("imagens\\rostinhosam.png")
         bot_image = ImageTk.PhotoImage(bot_image_src.resize((40, 40)))
         if self.message != "":
             self.current_time = time.strftime("%H:%M")
