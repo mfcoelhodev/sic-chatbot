@@ -10,7 +10,7 @@ import cProfile, random
 root = ct.CTk()
 root.title("Assistente Virtual")
 ct.set_appearance_mode("light") #dark
-ct.set_default_color_theme("green")
+ct.set_default_color_theme=('#f6f2f3')
 bgColor = "#f6f2f3"   #black
 root.configure(fg_color=bgColor)
 root.geometry("1000x650+500+100")
