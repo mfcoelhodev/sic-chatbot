@@ -1,5 +1,5 @@
 # Exemplo da resposta da nossa API
-frase = "O Galaxy A14 5G é o melhor celular pra você."
+frase = "Resposta do chatbot aqui!"
 
 def verificar_palavras_chave(frase):
     palavras_chave = {
@@ -11,7 +11,10 @@ def verificar_palavras_chave(frase):
         'Galaxy A24': 'https://www.samsung.com/br/smartphones/galaxy-a/galaxy-a24-black-128gb-sm-a245mzkuzto/',
         'Galaxy A34': 'https://www.samsung.com/br/smartphones/galaxy-a/galaxy-a34-5g-lime-128gb-sm-a346mlgazto/',
         'Galaxy A54': 'https://www.samsung.com/br/smartphones/galaxy-a/galaxy-a54-5g-green-256gb-sm-a546elgdzto/',
-    }
+        'Galaxy M54 5G': 'https://shop.samsung.com/br/galaxy-m54-5g-256gb/p',
+        'Galaxy M34 5G': 'https://shop.samsung.com.br/galaxy-m34-5g/p',
+        'Galaxy M14 5G': 'https://shop.samsung.com/br/galaxy-m14-5g/p,
+}
 
     for palavra_chave, link in palavras_chave.items():
         if palavra_chave in frase:
