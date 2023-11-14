@@ -5,12 +5,14 @@ from PIL import Image, ImageTk
 import time
 import os
 import cProfile, random
+import webbrowser
+
 #from generate import conversa_com_chatbot
 
 root = ct.CTk()
 root.title("Assistente Virtual")
 ct.set_appearance_mode("light") #dark
-ct.set_default_color_theme("green")
+ct.set_default_color_theme=('#f6f2f3')
 bgColor = "#f6f2f3"   #black
 root.configure(fg_color=bgColor)
 root.geometry("1000x650+500+100")
@@ -28,6 +30,11 @@ with open(file_path, "w") as img_src:
     my_image = image_list
     print(my_image)
     img_src.write(f"{my_image}")
+
+def abrir_link():
+        link = 'https://www.samsung.com/br/'
+        webbrowser.open(link)
+
 
 class ChatApp:
     def __init__(self, root):
@@ -85,6 +92,7 @@ class ChatApp:
 
         self.chatIcon = ct.CTkButton(self.chatFram, text="",image=chatIconImage, width=20, bg_color=bgColorChatFram, fg_color=bgColorChatFram)
         self.chatIcon.pack(side=LEFT, padx=5)
+        self.chatIcon.configure(command=abrir_link)
 
         self.msgInput = ct.CTkEntry(self.chatFram, placeholder_text="Digite sua pergunta aqui ...", height=40, font=("consolas", 18))
         self.msgInput.pack(side=LEFT, pady=10, padx=0, fill=X, expand=True)
