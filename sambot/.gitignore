@@ -1,0 +1,6 @@
+__pycache__
+persist/
+.DS_Store
+.chroma/
+flagged/
+env/
