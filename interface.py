@@ -4,7 +4,7 @@ import customtkinter as ct
 from PIL import Image, ImageTk
 import time
 import os
-import cProfile, random
+import cProfile
 from chatbot import Samsung_Chatbot
 
 root = ct.CTk()
