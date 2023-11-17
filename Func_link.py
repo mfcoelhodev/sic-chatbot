@@ -1,7 +1,4 @@
-# Exemplo da resposta da nossa API
-frase = "Resposta do chatbot aqui!"
-
-def verificar_palavras_chave(frase):
+def func_link(frase):
     palavras_chave = {
         'Galaxy A03': 'https://shop.samsung.com.br/galaxy-a03-core-32gb/p',
         'Galaxy A04e': 'https://www.samsung.com/br/smartphones/galaxy-a/galaxy-a04e-black-64gb-sm-a042mzkhzto/',
@@ -13,14 +10,16 @@ def verificar_palavras_chave(frase):
         'Galaxy A54': 'https://www.samsung.com/br/smartphones/galaxy-a/galaxy-a54-5g-green-256gb-sm-a546elgdzto/',
         'Galaxy M54 5G': 'https://shop.samsung.com/br/galaxy-m54-5g-256gb/p',
         'Galaxy M34 5G': 'https://shop.samsung.com.br/galaxy-m34-5g/p',
-        'Galaxy M14 5G': 'https://shop.samsung.com/br/galaxy-m14-5g/p,
-}
+        'Galaxy M14 5G': 'https://shop.samsung.com/br/galaxy-m14-5g/p',
+    }
 
     for palavra_chave, link in palavras_chave.items():
         if palavra_chave in frase:
-            return f"Para mais informações, acesse o link: {link}"
+            retornar = frase + "\n" + f"Para mais informações, acesse o link: {link}"
+            return retornar
 
-    return "Nenhuma palavra-chave encontrada."
+    return frase
 
-resposta = verificar_palavras_chave(frase)
-print(resposta)
+    
+    
+    
