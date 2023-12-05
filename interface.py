@@ -43,24 +43,24 @@ class ChatApp:
         self.optionFram = Frame(janela, bg="#f6f2f3") 
         
 
-        man_icone_robo = Image.open("Imagens/samsung_avatar-removebg-preview.png")
-        man_imagem_robo = ImageTk.PhotoImage(man_icone_robo.resize((40, 40)))
+        man_icone_sam = Image.open("Imagens/samsung_avatar-removebg-preview.png")
+        man_imagem_sam = ImageTk.PhotoImage(man_icone_sam.resize((40, 40)))
 
         man_icone_enviar = Image.open("Imagens/enviar.png")
         man_imagem_enviar = ImageTk.PhotoImage(man_icone_enviar.resize((40, 40)))
 
         man_icone_mensagem = Image.open("imagens\\message.png")
-        man_imagem_mansagem = ImageTk.PhotoImage(man_icone_mensagem.resize((40, 40)))
+        man_imagem_mensagem = ImageTk.PhotoImage(man_icone_mensagem.resize((40, 40)))
 
         man_icone_chat = Image.open("Imagens/samsung.png")
         man_imagem_chat = ImageTk.PhotoImage(man_icone_chat.resize((55, 55)))
 
        
 
-        self.menIcone = ct.CTkButton(self.optionFram, text="",image=man_imagem_mansagem, width=0, bg_color=bgColor, fg_color=bgColor)
+        self.menIcone = ct.CTkButton(self.optionFram, text="",image=man_imagem_mensagem, width=0, bg_color=bgColor, fg_color=bgColor)
         self.menIcone.pack(side=RIGHT, anchor="nw", padx=5, pady=5)
 
-        self.manIcone2 = ct.CTkButton(self.optionFram, text="",image=man_imagem_robo, height=1, width=1, bg_color=bgColor, fg_color=bgColor,
+        self.manIcone2 = ct.CTkButton(self.optionFram, text="",image=man_imagem_sam, height=1, width=1, bg_color=bgColor, fg_color=bgColor,
                                 corner_radius=20)
         self.manIcone2.pack(side=LEFT, anchor="ne")
 
@@ -93,17 +93,17 @@ class ChatApp:
         ########   EU PAREI AQUI:  #######################
 
 
-        self.chatIcon = ct.CTkButton(self.chatFram, text="",image=man_imagem_chat, width=20, bg_color=bgColorChatFram, fg_color=bgColorChatFram)
-        self.chatIcon.pack(side=LEFT, padx=5)
-        self.chatIcon.configure(command=abrir_link)
+        self.chatIcone = ct.CTkButton(self.chatFram, text="",image=man_imagem_chat, width=20, bg_color=bgColorChatFram, fg_color=bgColorChatFram)
+        self.chatIcone.pack(side=LEFT, padx=5)
+        self.chatIcone.configure(command=abrir_link)
     
         
         self.msgInput = ct.CTkEntry(self.chatFram, placeholder_text="Digite aqui...", height=40, text_color="#010100", font=("consolas", 18))
         self.msgInput.pack(side=LEFT, pady=10, padx=0, fill=X, expand=True)
 
-        self.submitBtn = ct.CTkButton(self.chatFram, text="", image=man_imagem_enviar, bg_color=bgColorChatFram, fg_color=bgColorChatFram, height=40, width=20, hover_color=bgColorChatFram)
-        self.submitBtn.pack(side=LEFT, padx=0, pady=8)
-        self.submitBtn.configure(command=self.enviarMensagem)
+        self.enviarmsg = ct.CTkButton(self.chatFram, text="", image=man_imagem_enviar, bg_color=bgColorChatFram, fg_color=bgColorChatFram, height=40, width=20, hover_color=bgColorChatFram)
+        self.enviarmsg.pack(side=LEFT, padx=0, pady=8)
+        self.enviarmsg.configure(command=self.enviarMensagem)
 
         self.chatFram.pack(side=BOTTOM, fill=X, ipady=5)
 
@@ -116,10 +116,10 @@ class ChatApp:
 
         self.message = self.msgInput.get()
         self.msgInput.delete(0, END)
-        user_image_src = Image.open(self.imagename)
-        user_image = ImageTk.PhotoImage(user_image_src.resize((40, 40)))        
-        bot_image_src = Image.open("imagens\\robot.png")
-        bot_image = ImageTk.PhotoImage(bot_image_src.resize((40, 40)))
+        usuario_imagem_src = Image.open(self.imagename)
+        usuario_imagem = ImageTk.PhotoImage(usuario_imagem_src.resize((40, 40)))        
+        robo_imagem_src = Image.open("imagens\\robot.png")
+        robo_imagem = ImageTk.PhotoImage(robo_imagem_src.resize((40, 40)))
         if self.message != "":
             self.current_time = time.strftime("%H:%M")
             self.current_time_label = ct.CTkLabel(self.label_frame, text=self.current_time, font=("consolas", 12))
@@ -130,7 +130,7 @@ class ChatApp:
             self.user_label = ct.CTkLabel(self.user_frame, text=self.message, font=("Poppins", 15), fg_color="#419f5b", corner_radius=4,
                                     wraplength=250)
             self.user_label.pack(side=LEFT, anchor="nw", pady=1, ipadx=15, ipady=6, padx=10)
-            self.user_image_label = ct.CTkLabel(self.user_frame, text="", image=user_image, fg_color="#f6f2f3") 
+            self.user_image_label = ct.CTkLabel(self.user_frame, text="", image=usuario_imagem, fg_color="#f6f2f3") 
             self.user_image_label.pack(side=TOP, pady=13)
             self.janela.update_idletasks()
             self.canvas.update_idletasks()
@@ -146,13 +146,13 @@ class ChatApp:
                     self.bot_response_label = ct.CTkLabel(self.bot_frame, text=self.to_respond, font=("Poppins", 14), 
                                         fg_color="#444", corner_radius=6, wraplength=300)
                     self.bot_response_label.pack(side=RIGHT, anchor="ne", padx=10, pady=1, ipady=8, ipadx=10)
-                    self.bot_image_label = ct.CTkLabel(self.bot_frame, text="", image=bot_image, fg_color="#f6f2f3") 
+                    self.bot_image_label = ct.CTkLabel(self.bot_frame, text="", image=robo_imagem, fg_color="#f6f2f3") 
                     self.bot_image_label.pack(side=TOP, pady=13)
                     self.canvas.update_idletasks()
                     self.canvas.yview_moveto(1.0)
 
                 if self.msgInput.get() :
-                    print("Working")
+                    print("Trabalhando")
 
                 else:
                     pass
