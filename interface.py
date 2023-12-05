@@ -120,6 +120,7 @@ class ChatApp:
         usuario_imagem = ImageTk.PhotoImage(usuario_imagem_src.resize((40, 40)))        
         robo_imagem_src = Image.open("imagens\\robot.png")
         robo_imagem = ImageTk.PhotoImage(robo_imagem_src.resize((40, 40)))
+        #PAREI AQUI !!!! (JONATAS)
         if self.message != "":
             self.current_time = time.strftime("%H:%M")
             self.current_time_label = ct.CTkLabel(self.label_frame, text=self.current_time, font=("consolas", 12))
